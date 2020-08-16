@@ -36,8 +36,20 @@ body {
     position: absolute;
     width: 100%;
     z-index: 1;
-    margin-top: 22px;
+    padding-top: 22px;
     border-bottom: 1px solid #7c7c7c;
+}
+
+.header.fixed {
+    background: linear-gradient(#313131,#3a4a5a);
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    padding-top: 10px;
+    z-index: 999;
+    border-bottom: 0;
 }
 
 .header__inner {
@@ -85,25 +97,91 @@ body {
     text-decoration: none;
     color: #ffffff;
     margin: 0 20px;
-    
-
+    position: relative;
+    text-align: center;
 }
 
 .nav__link:after {
     display: block;
     content: "";
     height: 6px;
-    width: 80px;
+    width: 100%;
     background-color: #11749e;
     position: absolute;
-    bottom: 0;
-    
+    bottom: -30px;
+    left: 0;
+    opacity: 0;
+}
+
+.nav__link:hover:after,
+.nav__link.active:after {
+    opacity: 1;
 }
 
 .nav__link.icon {
     margin: 0 10px;
 }
 
+.nav__toggle {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 50px;
+    z-index: 1;
+    display: none;
+    border: 0;
+    background: 0;
+    cursor: pointer;
+    font-size: 0;
+    color: transparent;
+}
+
+.nav__toggle__item {
+    display: block;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+    transition: background 0.2s linear;
+}
+
+
+.nav__toggle.active .nav__toggle__item {
+    background: none;
+}
+
+.nav__toggle.active .nav__toggle__item:before {
+    transform: rotate(45deg) translateX(-3px);
+    transform-origin: left top;
+}
+
+.nav__toggle.active .nav__toggle__item:after {
+    transform: rotate(-45deg) translateX(-3px);
+    transform-origin: left bottom;
+}
+
+.nav__toggle__item:before ,
+.nav__toggle__item:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #f5f5f5;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s linear;
+}
+
+.nav__toggle__item:before {
+    top: -15px;
+}
+
+.nav__toggle__item:after {
+    bottom: -15px;
+}
 
 /*intro*/
 
@@ -705,10 +783,52 @@ input[type="submit"] {
 @media (max-width: 930px) {
     /* Intro*/
     
+    .header {
+        border-bottom: 0;
+    }
+    
+    .header__inner {
+        padding: 8px 0;
+    }
+    
+    .header__logo {
+        left: -30px;
+        top: -10px;
+    }
+    
+    .header__logo:after {
+        left: 9px;
+        top: 7px;
+    }
+    
     .nav {
-    display: none;
+        display: none;
+        position: absolute;
+        width: 100%;
+        left: -62px;
+        top: 100%;
+        background: linear-gradient(#313131,#3a4a5a);
+    }
+    
+    .nav.active {
+        display: block;
     }
 
+    .nav__link {
+        display: block;
+        padding: 5px 40px;
+        margin: 0;
+    }
+
+    .nav__link:after {
+        bottom: 0;
+        width: 100%;
+        left: 0;
+    }
+    
+    .nav__toggle {
+        display: block;
+    }
     
     .intro__title {
     font-size: 100px;
@@ -716,11 +836,6 @@ input[type="submit"] {
     
      .intro__subtitle {
     font-size: 17px;
-    }
-    
-    .header__logo {
-    left: -30px;
-    top: 0;
     }
     
     .scroll__down {
@@ -862,19 +977,19 @@ input[type="submit"] {
 
 @media (max-width: 575px) {
     /* Intro*/
+    
     .header__logo {
-    width: 100px;
-    height: 100px;
-    font-size: 52px;
-    left: 0;
-    top: 52px;
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+    left: -20px;
     }
     
     .header__logo:after {
-    width: 100px;
-    height: 100px;
-    left: 12px;
-    top: 12px;
+    width: 70px;
+    height: 70px;
+    left: 8px;
+    top: 8px;
     }
     
     .intro__title {
@@ -884,19 +999,6 @@ input[type="submit"] {
     .intro__subtitle {
         padding: 0;
         font-size: 7px;
-    }
-    
-    .header__logo {
-    width: 70px;
-    height: 70px;
-    font-size: 33px;
-    left: -27px;
-    top: 8px;
-    }
-    
-    .header__logo:after {
-        width: 70px;
-        height: 70px;
     }
     
     .scroll__down {
@@ -956,6 +1058,7 @@ input[type="submit"] {
     .specifications {
         min-width: 230px;
         font-size: 11px;
+        padding: 0 5px;
     }
     
 /*footer*/

@@ -10,37 +10,42 @@
 </head>
 <body>
     
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
-                <div class="header__logo">CS</div>
-                <div class="nav">
-                    <a class="nav__link active" href="#">Home</a>
-                    <a class="nav__link" href="#">Pages</a>
-                    <a class="nav__link" href="#">Features</a>
-                    <a class="nav__link" href="#">Extensions</a>
-                    <a class="nav__link" href="#">Tutorials</a>
-                    <a class="nav__link" href="#">Contact us</a>
+                <div class="header__logo" data-scroll="#intro">CS</div>
+                <div class="nav" id="nav">
+                    <a class="nav__link" href="#" data-scroll="#intro" >Home</a>
+                    <a class="nav__link" href="#" data-scroll="#pages__nav">Pages</a>
+                    <a class="nav__link" href="#" data-scroll="#features__nav">Features</a>
+                    <a class="nav__link" href="#" data-scroll="#extensions__nav">Extensions</a>
+                    <a class="nav__link" href="#" data-scroll="#tutorials">Tutorials</a>
+                    <a class="nav__link" href="#" data-scroll="#contacs">Contact us</a>
                     <a class="nav__link icon" href="#"><img src="./img/f.png" alt=""></a>
                     <a class="nav__link icon" href="#"><img src="./img/twitter.PNG" alt=""></a>
                     <a class="nav__link icon" href="#"><img src="./img/Skype.png" alt=""></a>
                     <a class="nav__link icon" href="#"><img src="./img/in.png" alt=""></a>
                 </div>
+                
+                <button class="nav__toggle" id="nav__toggle" type="button">
+                    <div class="nav__toggle__item">Menu</div>
+                </button>
+                
             </div>
         </div>
     </header>
     
-    <div class="intro">
+    <div class="intro" id="intro">
         <div class="container">
             <div class="intro__inner">
                 <h1 class="intro__title">Creatives</h1>
                 <h3 class="intro__subtitle">Power by PSDfreebies.com</h3>
-                <span data-title="Scroll down" class="scroll__down"></span>
+                <span data-title="Scroll down" class="scroll__down" id="scroll_down" ></span>
             </div>
         </div>
     </div>
     
-    <div class="pages">
+    <div class="pages" id="features__nav" >
         <div class="container">
             <div class="intro__pages">
                 <div class="letter-w">W</div>
@@ -87,7 +92,7 @@
         </div> <!--container-->
     </div> <!--pages-->
     
-    <div class="notes">
+    <div class="notes" id="pages__nav">
         
         <div class="note__block">
             <div class="note__suptitle">
@@ -121,7 +126,7 @@
     </div> <!--notes-->
     
     
-    <div class="blog">
+    <div class="blog" id="extensions__nav">
         <div class="container">
             <div class="intro__blog">
                 <div class="letter-gray">B</div>
@@ -166,7 +171,7 @@
     </div> <!--blog-->
     
     
-    <div class="reviews">
+    <div class="reviews" id="tutorials" >
        
         <div class="reviews__item">
             <img class="reviews__img" src="./img/write_big.png" alt="">
@@ -246,7 +251,7 @@
         </div> <!--people-->
     </div> <!--team-->
     
-    <div class="contacs">
+    <div class="contacs" id="contacs" >
         <div class="container">
             <div class="intro__blog">
                 <div class="letter-w">C</div>
@@ -265,10 +270,12 @@
         </div>
     </div>
     
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d171402.024459535!2d35.08951374440373!3d47.836558868898486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc673dfa85bb03%3A0x7e675cd9074d3f4a!2z0JfQsNC_0L7RgNC-0LbRjNC1LCDQl9Cw0L_QvtGA0L7QttGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA2OTAwMA!5e0!3m2!1sru!2sua!4v1595536462428!5m2!1sru!2sua" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="map"></iframe>
+    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d171402.024459535!2d35.08951374440373!3d47.836558868898486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc673dfa85bb03%3A0x7e675cd9074d3f4a!2z0JfQsNC_0L7RgNC-0LbRjNC1LCDQl9Cw0L_QvtGA0L7QttGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA2OTAwMA!5e0!3m2!1sru!2sua!4v1595536462428!5m2!1sru!2sua" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="map"></iframe>
    
     <div class="footer">© 2016 PSDfreebies.com – All Right Reserved</div>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./app.js"></script>
     
 </body>
 </html>
